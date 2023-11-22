@@ -12,6 +12,7 @@
     export let gridOptions;
     export let row
     export let rowIndex
+    export let role
 
 
     function cellClickHandler(e) {
@@ -21,16 +22,18 @@
 </script>
 
 {#each columnDefs as column, columnIndex (columnIndex)} 
-    {#if column.cellRenderer}
-        <CellRenderer {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
-    {:else if column.valueFormatter}
-        <CellValueFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
-    {:else if column.dateFormatter}
-        <CellDateFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
-    {:else if column.currencyFormatter}
-        <CellCurrencyFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
-    {:else}
-        <Cell {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+    {#if (column.roles && column.roles.indexOf(role) > -1) || role === 'ALL'}
+        {#if column.cellRenderer}
+            <CellRenderer {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+        {:else if column.valueFormatter}
+            <CellValueFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+        {:else if column.dateFormatter}
+            <CellDateFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+        {:else if column.currencyFormatter}
+            <CellCurrencyFormatter {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+        {:else}
+            <Cell {row} {column} {gridOptions} on:cellClicked={cellClickHandler}/>
+        {/if}
     {/if}
 {/each}
 

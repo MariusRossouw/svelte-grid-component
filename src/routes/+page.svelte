@@ -1,7 +1,7 @@
 <script>
     import Grid from "$lib/Grid/Grid.svelte"
 
-    let role = "ALL"
+    let role = "Operator"
 
     let selectedRow = {}
 

@@ -4,8 +4,8 @@
     const dispatch = createEventDispatcher()
 
     export let column 
-    export let gridOptions
-    export let role
+    // export let gridOptions
+    // export let role
 
     
 

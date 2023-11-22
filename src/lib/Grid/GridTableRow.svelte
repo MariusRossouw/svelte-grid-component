@@ -5,6 +5,7 @@
     const dispatch = createEventDispatcher();
 
     export let grid;
+    export let role;
 
     function cellClickHandler(e) {
         dispatch("cellClicked", e.detail);
@@ -13,7 +14,7 @@
 
 {#each grid.rowData as row, rowIndex (rowIndex)}
     <tr class="gridRow" class:gridRowIsSelected={row.rowIndex > -1 && row.selected === true}>
-        <GridTableRowColumn {row} {rowIndex} columnDefs={grid.columnDefs} gridOptions={grid.gridOptions} on:cellClick={cellClickHandler}/>
+        <GridTableRowColumn {row} {rowIndex} {role} columnDefs={grid.columnDefs} gridOptions={grid.gridOptions} on:cellClick={cellClickHandler}/>
     </tr>
 {/each}
 

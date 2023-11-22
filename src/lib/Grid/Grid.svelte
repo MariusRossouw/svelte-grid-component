@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import {writable} from "svelte/store"
-    import {setContext} from "svelte"
+    // import {writable} from "svelte/store"
+    // import {setContext} from "svelte"
     import { createEventDispatcher } from 'svelte'
     import GridTable from "./GridTable.svelte"
 
@@ -21,15 +21,17 @@
     });
 
     function gridHeaderClickHandler(e) {
+        e.detail.gridName = gridName
         dispatch('gridHeaderClick', e.detail)
     }
 
     function cellckickHandler(e) {
+        e.detail.gridName = gridName
         dispatch('cellClick', e.detail)
     }
 
 </script>
 
 <div>
-    <GridTable {grid} {role} {gridName} {showPagination} on:gridHeaderClick={gridHeaderClickHandler} on:cellClick={cellckickHandler}/>
+    <GridTable {grid} {role} {showPagination} on:gridHeaderClick={gridHeaderClickHandler} on:cellClick={cellckickHandler}/>
 </div>

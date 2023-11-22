@@ -8,7 +8,6 @@
 
     export let grid 
     export let role 
-    export let gridName
     export let showPagination
 
     function gridHeaderClicked(e) {
@@ -35,7 +34,7 @@
             The table rows
           -->
         <tbody>
-            <GridTableRow {grid} on:cellClicked={cellClickedHandler}/>
+            <GridTableRow {grid} {role} on:cellClicked={cellClickedHandler}/>
         </tbody>
     </table>
     <!-- 
