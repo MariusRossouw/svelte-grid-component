@@ -1,0 +1,34 @@
+<script>
+    import { createEventDispatcher } from "svelte";
+    import GridTableRowColumn from "./GridTableRowColumn.svelte"
+
+    const dispatch = createEventDispatcher();
+
+    export let grid;
+
+    function cellClickHandler(e) {
+        dispatch("cellClicked", e.detail);
+    }
+</script>
+
+{#each grid.rowData as row, rowIndex (rowIndex)}
+    <tr class="gridRow" class:gridRowIsSelected={row.rowIndex > -1 && row.selected === true}>
+        <GridTableRowColumn {row} {rowIndex} columnDefs={grid.columnDefs} gridOptions={grid.gridOptions} on:cellClick={cellClickHandler}/>
+    </tr>
+{/each}
+
+
+<style>
+    .gridRow {
+        border: 1px solid grey;
+    }
+
+    .gridRow:hover {
+        border: 1px solid darkgray;
+        background-color: lightblue;
+    }
+
+    .gridRowIsSelected {
+        background-color: bisque;
+    }
+</style>
