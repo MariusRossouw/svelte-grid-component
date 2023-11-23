@@ -28,7 +28,7 @@
             The columns for the header row
          -->
          <thead>
-            <GridTableHeader columnDefs={grid.columnDefs} gridOptions={grid.gridOptions} {role} on:gridHeaderClick={gridHeaderClicked}/>
+            <GridTableHeader columnDefs={grid.columnDefs} {role} on:gridHeaderClick={gridHeaderClicked}/>
         </thead>
          <!-- 
             The table rows

@@ -22,11 +22,13 @@
 <style>
     .gridRow {
         border: 1px solid grey;
+        color: var(--primaryTextColor, black);
     }
 
     .gridRow:hover {
         border: 1px solid darkgray;
         background-color: lightblue;
+        color: var(--secondaryTextColor, pink);
     }
 
     .gridRowIsSelected {

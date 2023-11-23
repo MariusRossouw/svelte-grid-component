@@ -5,7 +5,6 @@
     const dispatch = createEventDispatcher()
 
     export let columnDefs 
-    export let gridOptions
     export let role 
 
     function gridHeaderClicked(e) {
@@ -16,6 +15,6 @@
 
 {#each columnDefs as column, index (index)}
     {#if (column.roles && column.roles.indexOf(role) > -1) || role === 'ALL'}
-        <GridTableHeaderCell {column} {gridOptions} {role} on:gridHeaderClick={gridHeaderClicked}/>
+        <GridTableHeaderCell {column} on:gridHeaderClick={gridHeaderClicked}/>
     {/if}
 {/each}

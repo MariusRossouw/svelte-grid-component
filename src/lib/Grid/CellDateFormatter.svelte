@@ -37,4 +37,11 @@
     .gridCellDateFormatter:hover {
         background-color: lightgreen;
     }
+
+    /* td:first-child {
+        position: sticky;
+        left: 0;
+        background: darkgrey;
+        z-index: 100;
+    } */
 </style>

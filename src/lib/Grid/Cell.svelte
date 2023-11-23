@@ -37,4 +37,11 @@
     .gridCell:hover {
         background-color: green;
     }
+
+    /* td:first-child {
+        position: sticky;
+        left: 0;
+        background: darkgrey;
+        z-index: 100;
+    } */
 </style>
