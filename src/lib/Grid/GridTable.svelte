@@ -36,13 +36,16 @@
         <tbody>
             <GridTableRow {grid} {role} on:cellClicked={cellClickedHandler}/>
         </tbody>
-    </table>
-    <!-- 
+        <!-- 
         Pagination
      -->
      {#if showPagination}
-        <GridPagination />
+        <div class="pagination">
+            <GridPagination />
+        </div>
      {/if}
+    </table>
+    
      
 </div>
 
@@ -63,6 +66,19 @@ thead {
     position: sticky;
     z-index: 100;
     top: 0;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #000;
+    -moz-box-shadow:inset 0px 0px 0px 1px #000;
+    box-shadow:inset 0px 0px 0px 1px #000;
+}
+
+.pagination{
+    position: sticky;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    background: aquamarine;
+    width: 100%;
+    height: 30px;
     -webkit-box-shadow:inset 0px 0px 0px 1px #000;
     -moz-box-shadow:inset 0px 0px 0px 1px #000;
     box-shadow:inset 0px 0px 0px 1px #000;

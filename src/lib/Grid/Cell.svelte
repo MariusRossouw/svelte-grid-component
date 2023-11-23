@@ -22,7 +22,7 @@
 </script>
 
 
-<td class="gridCell" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCell" class:sticky={column.stickyPosition > -1} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {row[column.field] || ""}
     </span>

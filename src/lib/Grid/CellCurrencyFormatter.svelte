@@ -51,7 +51,7 @@
     
 </script>
 
-<td class="gridCellCurrencyFormatter" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCellCurrencyFormatter" class:sticky={column.stickyPosition > -1} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {#if column.currencyFormatter && column.currencyFormatter.length > 0}
             {format(row[column.field],...column.currencyFormatter) || ""}

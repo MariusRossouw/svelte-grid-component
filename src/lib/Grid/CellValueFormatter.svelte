@@ -51,7 +51,7 @@
     // console.log("Test7: ", format(12345, "en-US", "centimeter", "narrow", true, "cm"))
 </script>
 
-<td class="gridCellValueFormatter" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCellValueFormatter" class:sticky={column.stickyPosition > -1} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {#if column.valueFormatter && column.valueFormatter.length > 0}
             {format(row[column.field],...column.valueFormatter) || ""}

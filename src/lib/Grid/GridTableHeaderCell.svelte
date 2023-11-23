@@ -16,7 +16,7 @@
 
 </script>
 
-<th class="gridHeader" class:sticky={column.sticky} style={"width: "+column.width+"; --index: "+column.stickyPosition+"; --width: "+column.width} on:click={() => gridHeaderClicked(column)}>
+<th class="gridHeader" class:sticky={column.stickyPosition > -1} style={"width: "+column.width+"; --index: "+column.stickyPosition+"; --width: "+column.width} on:click={() => gridHeaderClicked(column)}>
     <span>
         {column.headerName}
     </span>
