@@ -15,6 +15,6 @@
 
 {#each columnDefs as column, index (index)}
     {#if (column.roles && column.roles.indexOf(role) > -1) || role === 'ALL'}
-        <GridTableHeaderCell {column} on:gridHeaderClick={gridHeaderClicked}/>
+        <GridTableHeaderCell {column} {index} on:gridHeaderClick={gridHeaderClicked}/>
     {/if}
 {/each}

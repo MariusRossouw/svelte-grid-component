@@ -51,7 +51,7 @@
     // console.log("Test7: ", format(12345, "en-US", "centimeter", "narrow", true, "cm"))
 </script>
 
-<td class="gridCellValueFormatter" on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCellValueFormatter" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {#if column.valueFormatter && column.valueFormatter.length > 0}
             {format(row[column.field],...column.valueFormatter) || ""}
@@ -70,10 +70,10 @@
         background-color: lightpink;
     }
 
-    /* td:first-child {
+    .sticky {
         position: sticky;
-        left: 0;
-        background: darkgrey;
-        z-index: 100;
-    } */
+        left: calc(var(--index)*var(--width));
+        background: lightblue;
+        z-index: 99;
+    }
 </style>

@@ -22,7 +22,7 @@
 </script>
 
 
-<td class="gridCellDateFormatter" on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCellDateFormatter" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {row[column.field] || ""}
     </span>
@@ -38,10 +38,10 @@
         background-color: lightgreen;
     }
 
-    /* td:first-child {
+    .sticky {
         position: sticky;
-        left: 0;
-        background: darkgrey;
-        z-index: 100;
-    } */
+        left: calc(var(--index)*var(--width));
+        background: lightblue;
+        z-index: 99;
+    }
 </style>

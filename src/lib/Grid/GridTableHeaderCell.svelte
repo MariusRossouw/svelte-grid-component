@@ -4,6 +4,7 @@
     const dispatch = createEventDispatcher()
 
     export let column 
+    export let index
     // export let gridOptions
     // export let role
 
@@ -15,7 +16,7 @@
 
 </script>
 
-<th class="gridHeader" style={"width:"+column.width} on:click={() => gridHeaderClicked(column)}>
+<th class="gridHeader" class:sticky={column.sticky} style={"width: "+column.width+"; --index: "+column.stickyPosition+"; --width: "+column.width} on:click={() => gridHeaderClicked(column)}>
     <span>
         {column.headerName}
     </span>
@@ -31,5 +32,12 @@
     .gridHeader:hover {
         border: 1px solid darkgray;
         background-color: lightblue;
+    }
+
+    .sticky {
+        position: sticky;
+        left: calc(var(--index)*var(--width));
+        background: lightblue;
+        z-index: 99;
     }
 </style>

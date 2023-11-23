@@ -22,7 +22,7 @@
 </script>
 
 
-<td class="gridCell" on:click={cellClickAction(row[column.field], row, column)}>
+<td class="gridCell" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={cellClickAction(row[column.field], row, column)}>
     <span>
         {row[column.field] || ""}
     </span>
@@ -35,13 +35,13 @@
     }
 
     .gridCell:hover {
-        background-color: green;
+        background-color: lavender;
     }
 
-    /* td:first-child {
+    .sticky {
         position: sticky;
-        left: 0;
-        background: darkgrey;
-        z-index: 100;
-    } */
+        left: calc(var(--index)*var(--width));
+        background: lightblue;
+        z-index: 99;
+    }
 </style>

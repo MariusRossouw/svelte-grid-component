@@ -12,9 +12,9 @@
             onHeaderClickHandler: "orderBy"
         },
         columnDefs: [
-            {headerName: "First Name", field: "first_name", onCellClickHandler: "openRow", roles: ["Super Admin","Operator"], width: "200px"},
+            {headerName: "First Name", field: "first_name", onCellClickHandler: "openRow", roles: ["Super Admin","Operator"], width: "200px", sticky: true, stickyPosition: 0},
             {headerName: "Last Name", field: "last_name", roles: ["Super Admin","Operator"], width: "200px"},
-            {headerName: "Date", field: "date", roles: ["Super Admin","Operator"], dateFormatter: "yyy-mm-d", width: "200px"},
+            {headerName: "Date", field: "date", roles: ["Super Admin","Operator"], dateFormatter: "yyy-mm-d", width: "200px", sticky: true, stickyPosition: 1},
             {headerName: "Amount", field: "amount", roles: ["Super Admin"], currencyFormatter: ["en-US", "ZAR", "narrowSymbol", false, "ZAR"], width: "200px"},
             {headerName: "Size", field: "size", roles: ["Super Admin"], valueFormatter: ["en-US", "centimeter", "short", false, "centimeters"], width: "200px"},
             {headerName: "Open", field: "open", roles: ["Super Admin"], onCellClickHandler: "openRow", cellRenderer: "<button style='cursor: pointer'>Open</button>", width: "80px"},

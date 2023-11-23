@@ -22,7 +22,7 @@
 </script>
 
 
-<td class="gridCellRenderer" on:click={() => cellClickAction(row[column.field], row, column)}>
+<td class="gridCellRenderer" class:sticky={column.sticky} style={"--index: "+column.stickyPosition+"; --width: "+column.width} on:click={() => cellClickAction(row[column.field], row, column)}>
     <span>
         {@html column.cellRenderer  || ""}
     </span>
@@ -40,10 +40,10 @@
         background-color: transparent;
     }
 
-    /* td:first-child {
+    .sticky {
         position: sticky;
-        left: 0;
-        background: darkgrey;
-        z-index: 100;
-    } */
+        left: calc(var(--index)*var(--width));
+        background: lightblue;
+        z-index: 99;
+    }
 </style>
