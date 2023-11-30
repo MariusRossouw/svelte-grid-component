@@ -36,16 +36,15 @@
         <tbody>
             <GridTableRow {grid} {role} on:cellClicked={cellClickedHandler}/>
         </tbody>
-        <!-- 
+    </table>
+    <!-- 
         Pagination
      -->
-     {#if showPagination}
+    {#if showPagination}
         <div class="pagination">
             <GridPagination />
         </div>
      {/if}
-    </table>
-    
      
 </div>
 

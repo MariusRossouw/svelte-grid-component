@@ -23,10 +23,12 @@
 </th>
 
 <style>
+    /* th {
+        resize: horizontal;
+    } */
     .gridHeader {
         background-color: aquamarine;
         border: 1px solid darkgrey;
-        
     }
 
     .gridHeader:hover {

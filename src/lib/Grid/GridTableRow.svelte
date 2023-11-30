@@ -13,7 +13,7 @@
 </script>
 
 {#each grid.rowData as row, rowIndex (rowIndex)}
-    <tr class="gridRow" class:gridRowIsSelected={row.rowIndex > -1 && row.selected === true}>
+    <tr class="gridRow" class:gridRowIsSelected={row.rowIndex > -1 && row.selected === true} style={"--height: " + grid.gridOptions.rowHeight}>
         <GridTableRowColumn {row} {rowIndex} {role} columnDefs={grid.columnDefs} gridOptions={grid.gridOptions} on:cellClick={cellClickHandler}/>
     </tr>
 {/each}
@@ -23,6 +23,7 @@
     .gridRow {
         border: 1px solid grey;
         color: var(--primaryTextColor, black);
+        height: var(--height, 30px);
     }
 
     .gridRow:hover {

@@ -9,7 +9,9 @@
 
     let grid = {
         gridOptions: {
-            onHeaderClickHandler: "orderBy"
+            onHeaderClickHandler: "orderBy",
+            orderBy: ["first_name"],
+            rowHeight: "40px"
         },
         columnDefs: [
             {headerName: "First Name", field: "first_name", onCellClickHandler: "openRow", roles: ["Super Admin","Operator"], width: "200px", stickyPosition: 0},
@@ -19,8 +21,7 @@
             {headerName: "Size", field: "size", roles: ["Super Admin"], valueFormatter: ["en-US", "centimeter", "short", false, "centimeters"], width: "200px"},
             {headerName: "Open", field: "open", roles: ["Super Admin"], onCellClickHandler: "openRow", cellRenderer: "<button style='cursor: pointer'>Open</button>", width: "80px"},
             {headerName: "Multi Select", field: "multi_select", roles: ["Super Admin","Operator"], onCellClickHandler: "multiSelect", width: "50px"},
-            {headerName: "Single Select", field: "single_select", roles: ["Super Admin","Operator"], onCellClickHandler: "singleSelect", cellRenderer: "<input type='checkbox' style='cursor: pointer' />", width: "50px"},
-            
+            {headerName: "Single Select", field: "single_select", roles: ["Super Admin","Operator"], onCellClickHandler: "singleSelect", cellRenderer: "<input type='checkbox' style='cursor: pointer' />", width: "50px"}
         ],
         rowData: [
             {first_name: "Marius", last_name: "Rossouw", amount:1259.88, size:1259.88, date: "2023-07-11"},
